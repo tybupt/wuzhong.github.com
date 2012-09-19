@@ -1,0 +1,97 @@
+#title{
+	font-size:19px; /* 字号 */
+	font-weight:bold; /* 粗体 */
+	text-align:center; /* 居中 */
+	padding:15px;       /* 间距 */
+}
+
+body{
+	padding:5px;
+	margin:5px;
+	background-color:#dddddd;
+}
+
+#mainContainer {
+	margin:0 auto 0 auto;
+	padding:0px;
+	width:1000px;
+	height:100%;
+	text-align:left;
+}
+
+/* 想用来给内容加边框的，没加成功 */
+#contentContainer {
+	border-left:1px solid #11a3ff;		/* 左边框 */
+	border-right:1px solid #11a3ff;		/* 右边框 */
+	border-bottom:1px solid #11a3ff;	/* 下边框 */
+	width:100%;
+	height:100%;
+}
+
+#menuDiv{
+		width:15.5%;
+		height:100%;
+		margin-top:1%;
+		float:left;
+		margin-left:0%;
+}
+
+#contentDiv{
+	margin-top:1%;
+	height:100%;
+	width:81%;
+	float:right;
+	margin-right:1%;
+}
+
+div.subContentDiv{
+	height:100%;
+	width:100%;
+}
+
+ul#tabnav{
+	list-style-type:none;
+	margin:0px;
+	padding-left:0px;					/* 左侧无空隙 */
+	padding-bottom:23px;
+	border-bottom:1px solid #11a3ff;	/* 菜单的下边框 */
+	font:bold 12px verdana, arial;
+}
+
+ul#tabnav li{
+	float:left;
+	height:22px;
+	background-color:#a3dbff;
+	margin:0px 3px 0px 0px;	
+	border:1px solid #11a3ff;
+}
+
+ul#tabnav a:link, ul#tabnav a:visited{
+	display:block;						/* 块元素 */
+	color:#006eb3;
+	text-decoration:none;
+	padding:5px 10px 3px 10px;
+}
+
+ul#tabnav a:hover{
+	background-color:#006eb3;
+	color:#FFFFFF;
+}
+
+body#home li.home, body#news li.album,	/* 当前页面的菜单项 */
+body#sports li.guestbook{
+	border-bottom:1px solid #FFFFFF;	/* 白色下边框，覆盖<ul>中的蓝色下边框 */
+	color:#000000;
+	background-color:#FFFFFF;
+}
+body#home li.home a:link, body#home li.home a:visited,	/* 当前页面的菜单项的超链接 */
+body#news li.album a:link, body#news li.album a:visited,
+body#sports li.guestbook a:link, body#sports li.guestbook a:visited,{
+	color:#000000;
+	background-color:#FFFFFF;
+}
+body#home li.home a:hover, body#news li.album a:hover,
+body#sports li.guestbook a:hover{
+	color:#006eb3;
+	text-decoration:underline;
+}
