@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<head>
+<link href = "../css/common.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<div id="title">IME relative</div>
+<div id="content">
+<pre>
+    <activity
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            ...
+    </activity>
+
+    windowSoftInputMode 的几个值记录一下：
+
+    stateVisible: 当界面有EditText时，默认弹出输入法   （在2.1模拟器里测试，却不起作用，原因待查）
+    stateHidden : 当界面有EditText时，默认不弹出输入法
+
+        android 2.1  默认不弹出输入法
+        android 4.0  默认  弹出输入法
+
+    adjustResize: EditText会被自动拉伸，输入法不会覆盖EditText    
+    adjustPan   : EditText不会被自动拉伸，输入法不会覆盖EditText
+
+        android 2.1 4.0 默认都是 adjustResize
+
+    adjustResize 图：
+    adjustPan    图：
+
+    2012-10-1
+</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<head>
+<link href = "../css/common.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<div id="title">A simple password module</div>
+<div id="content">
+<pre>
+
+    今天写了一个简单的登入模块。
+    存储：
+    文本地存储，用SharedPreferences。
+    1. 是否需要密码验证 [boolean]
+    2. 密码的值         [String]  length: 1~20
+
+    各种提示：
+    Toast。
+    Toast有一点不好，软件盘存在时（输入密码），Toast显示在软件盘上面，对比度不强，提示效果一般。
+    感觉用TextView 用红色字显示在屏幕输入框上方会好一些。
+
+    --------------
+
+    密码验证界面逻辑：
+    1. 登入时判断是否启需要输入密码，若需要，则进输入密码界面。
+    否则，进入主界面。
+
+    2. 判断密码是否正确。
+    密码是明文存储的，判断就是简单的字段，String.equals(..)。密码正确，则进入主界面。
+    否则，提示密码失败。
+
+    3. 密码验证界面还做了一个  “找回密码” 的小提示，目前只是告诉用户 进入 [设置->应用程序]里 清除数据。
+    TODO: 后续可以考虑在密码设置界面做一个 “密码提示”输入框，再把密码提示的内容显示到密码验证界面。
+
+    设置逻辑：
+    1. 启用/禁用 密码。
+    用CheckBox来做。在界面的onResume里判断了一下，当前密码是否为空。若为空，则CheckBox 置为disabed。
+    否则，enabled。
+    
+    2. 设置密码的入口。
+    可点击的控件，点击后跳转到密码设置界面。
+    我用的TextView，加下划线和点击效果。
+    
+    密码设置逻辑：
+    三个输入框：  旧密码，新密码，新密码确认。
+    两个控制按钮：确定，取消。
+    1. 当前密码是否为空，若为空，旧密码输入框隐藏。
+    否则，显示之。
+
+    2. 确定点击时
+    - 若旧密码不为空，则需要判断旧密码是否正确。
+      否则 提示之。
+    - 判断新密码是否为空。为空，提示之。
+    - 判断新密码与密码确认是否一致。不一致，提示之。
+    
+    若判断都通过，保存新密码，提示之。
+
+    2012-10-3
+</pre>
+</div>
+</body>
+</html>

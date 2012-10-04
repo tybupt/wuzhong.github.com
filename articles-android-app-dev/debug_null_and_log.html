@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<head>
+<link href = "../css/common.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<div id="title">Debug null and log</div>
+<div id="content">
+<pre>
+
+    if (aa != null) {
+        xxx;
+    }
+
+    这样的代码，今天遇到了 aa == null的情况，中间的代码没有执行。
+    对null的情况打一个log利于调试，发现问题：
+    if (aa != null) {
+        xxx;
+    } else {
+        Log.e(TAG, "Error null aa");
+    }
+    
+    如果 xxx; 代码太长，则这样更好一些:
+
+    if (aa == null) {
+        Log.e(TAG, "Error null aa");
+    }
+    xxx;
+    
+    2012-10-3
+</pre>
+</div>
+</body>
+</html>
