@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<head>
+<link href = "../css/common.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<div id="title">How to share and rate you app</div>
+<div id="content">
+<pre>
+    Share app:
+
+    1. Write a brief introduction and download address in string <str_share_app_text>.
+    2. Share the string with the below code.
+    
+    <pre><code class="c">
+    String content = getString(R.string.str_share_app_text);
+    
+    Intent it = new Intent(Intent.ACTION_SEND);
+    it.putExtra(Intent.EXTRA_TEXT, content);
+    it.setType("text/plain");
+    startActivity(it);
+    </code></pre>
+    
+    
+    Rate app:
+
+    Here just show the code to let user go to the main page of you app in app market.
+    
+    Replage "com.example.app" with you app's package name.
+    
+    <pre><code class="c">
+    Intent intent = new Intent(Intent.ACTION_VIEW); 
+	intent.setData(Uri.parse("market://details?id=com.example.app")); 
+	try {
+        startActivity(intent);
+    } catch (Exception e) {
+        Toast.makeText(MemoSettingsActivity.this,
+            R.string.str_error_no_proper_market, Toast.LENGTH_SHORT).show();
+    }
+    </code></pre>
+
+    2012-10-5
+</pre>
+</div>
+</body>
+</html>
