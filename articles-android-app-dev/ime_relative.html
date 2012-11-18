@@ -32,6 +32,18 @@
     adjustPan    图：
 
     2012-10-1
+    
+    AlertDialog 中的 edittext focus之后默认不弹出输入法。
+    解决方法：
+    http://stackoverflow.com/questions/3455235/when-using-alertdialog-builder-with-edittext-the-soft-keyboard-doesnt-pop
+
+    AlertDialog.Builder b = new AlertDialog.Builder(this);//....
+    AlertDialog dialog = b.create(); 
+    dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE); 
+    dialog.show();
+
+    2012-11-18
+    
 </pre>
 </div>
 </body>
